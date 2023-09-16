@@ -9,9 +9,11 @@ class Program
         Console.Write("What is your grade percentage?");
         string grade = Console.ReadLine();
         int grade_percent = int.Parse(grade);
-        string letter = "A";
+        string letter = "";
+        // This if/else statement determines the letter grade from ther user percentage
         if (grade_percent >= 90)
         {
+            letter = "A";
             Console.WriteLine(letter);
         }
         else if (grade_percent >= 80)
@@ -29,18 +31,19 @@ class Program
             letter = "D";
             Console.WriteLine(letter);
         }
-        else if (grade_percent >= 50)
+        else 
         {
             letter = "F";
             Console.WriteLine(letter);
         }
-        if (grade_percent >= 70)
-        {
-            Console.WriteLine("You passed! Congrats!");
+        // Tells the user if they passed of failed
+        if (grade_percent >+ 70) {
+            Console.WriteLine("Congrats! You passed!");
         }
-        else
+        else 
         {
-            Console.WriteLine("Better luck next time!");
+            Console.WriteLine("You did not pass. Try again!");
         }
+      
     }
 }
