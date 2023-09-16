@@ -14,30 +14,27 @@ class Program
         if (grade_percent >= 90)
         {
             letter = "A";
-            Console.WriteLine(letter);
         }
         else if (grade_percent >= 80)
         {
-            letter = "B";
-            Console.WriteLine(letter);
+           letter = "B";
         }
         else if (grade_percent >= 70)
         {
             letter = "C";
-            Console.WriteLine(letter);
         }
         else if (grade_percent >= 60)
         {
             letter = "D";
-            Console.WriteLine(letter);
         }
         else 
         {
             letter = "F";
-            Console.WriteLine(letter);
         }
+        // Instead of doing Console.WriteLine everywhere, you should have put it at the very bottom
+    Console.WriteLine(letter);
         // Tells the user if they passed of failed
-        if (grade_percent >+ 70) {
+        if (grade_percent >= 70) {
             Console.WriteLine("Congrats! You passed!");
         }
         else 
