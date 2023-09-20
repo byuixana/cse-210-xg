@@ -11,6 +11,7 @@ internal class Program
         Console.Write("What is your guess?");
         string guess_string = Console.ReadLine();
         int guess_number = int.Parse(guess_string);
+        
         while (guess_number != magic_number)
             // An if statement that checks if the guess number is high or lower
             {
