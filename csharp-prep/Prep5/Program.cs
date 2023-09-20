@@ -17,10 +17,6 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Prep5 World!");
-
-        static string Main();
-            {
-            }
                 //Welcomes user with their name
                 static void DisplayWelcome();
                     {
