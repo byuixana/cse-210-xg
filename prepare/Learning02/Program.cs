@@ -5,11 +5,21 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Learning02 World!");
-        Job job1 = new Job("Janitor", 0, "Clean, stay up late, have patience, and sing with a broom as a microphone.");
-        job1.ShowDetails();
+        Job job1 = new Job("Melalueca", "UX Designer", 2015, 2020);
+        Job job2 = new Job("Binary Cocoa", "Programmer", 2020, 2023);
+        
+        List<Job> jobs = new List<Job>();
+        Resume resume1 = new Resume();
+        resume1._applicantName = "John Doe";
+        resume1._jobs.Add(job1);
+        resume1._jobs.Add(job2);
+        
+        resume1.Display();
+        
 
-        Resume resume1 = new Resume("John Doe", "Binary Cocoa", 7);
-        resume1.DisplayData();
+
+        // resume1.DisplayResume()
+        
     }
 
 }

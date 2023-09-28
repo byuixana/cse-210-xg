@@ -1,20 +1,23 @@
 public class Job{
-    private string _jobTitle;
-    private int _yearsExperience;
-    private string _skillsNeeded;
+    public string _companyName;
+    public string _jobTitle;
+    public int _startYear;
+    public int _endYear;
+    
 
-    public Job(string jobTitle, int yearsExperience, string skills) 
+    public Job(string companyName, string jobTitle, int startYear, int endYear) 
     {
+    _companyName = companyName;
     _jobTitle = jobTitle;
-    _yearsExperience = yearsExperience;
-    _skillsNeeded = skills;
+    _startYear = startYear;
+    _endYear = endYear;
     }
 
 
     public void ShowDetails()
     {
-        Console.WriteLine($"""Job: {_jobTitle} {_yearsExperience} {_yearsExperience}.""");
-
+        Console.WriteLine($"Job:{_companyName} {_jobTitle} {_startYear} {_endYear}.");
+        
     }
 }
 

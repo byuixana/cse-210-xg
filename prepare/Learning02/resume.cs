@@ -1,21 +1,24 @@
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks.Dataflow;
 
-public class Resume {
-    private string _applicantName;
-    private string _companyName;
+public class Resume 
+{
+    public string _applicantName;
     
-    private int _experienceLevel;
+    public List<Job> _jobs = new List<Job>();
+    
+    public void Display()
+    {
+        Console.WriteLine($"Name:{_applicantName}");
+        Console.WriteLine("Jobs:");
 
-    public Resume(string name, string company, int experience){
-        _applicantName = name;
-        _companyName = company;
-        _experienceLevel = experience;
-    }
-
-    public void DisplayData(){
-        Console.WriteLine($"Name: {_applicantName} Company: {_companyName} Experience: {_experienceLevel}.");
-    }
-
-
+        foreach (Job job in _jobs)
+        {
+            job.ShowDetails();
+        }
 
     }
+
+    
+}
