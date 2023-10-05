@@ -19,6 +19,15 @@ public class Resume
         }
 
     }
-
+    public List<Job> GetJobs(){
+        return _jobs;
+    }
     
+    public void SetJobs(List<Job> jobs ){
+        _jobs=jobs;
+    }
+
+    public void SetAplicantsName(string name){
+        _applicantName =name;
+    }
 }

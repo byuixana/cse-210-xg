@@ -1,3 +1,5 @@
+using System.Diagnostics.Contracts;
+
 public class Job{
     public string _companyName;
     public string _jobTitle;
@@ -16,7 +18,7 @@ public class Job{
 
     public void ShowDetails()
     {
-        Console.WriteLine($"Job:{_companyName} {_jobTitle} {_startYear} {_endYear}.");
+        Console.WriteLine($"{_companyName} {_jobTitle} {_startYear} {_endYear}.");
         
     }
 }
