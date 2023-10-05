@@ -54,6 +54,9 @@ class Program
                 }
                 else if (num_user_response == 4)
                 {
+                    Console.Write("Name:");
+                    string journal_owner = Console.ReadLine();
+                    Console.WriteLine(journal_owner);
                     Console.Write("Filename:");
                     string load_file = Console.ReadLine();
                     Journal returned_file = new Journal();

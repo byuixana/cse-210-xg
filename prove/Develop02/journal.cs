@@ -6,6 +6,7 @@ public class Journal
     public Entry _entry;
     public List<Entry> _entryList;
     public string _filename;
+    public string _username;
 
     public Journal ()
     {
@@ -34,6 +35,7 @@ public class Journal
                 {
                     outputFile.WriteLine(entry.entryFormat());
                 }
+                
                     
             }
         }
