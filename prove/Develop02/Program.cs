@@ -37,7 +37,11 @@ class Program
                     // Reads user entry.
                     string user_input = Console.ReadLine(); 
 
-                    Entry user_entry = new Entry(prompt, user_input);
+                    Console.Write("Your name:");
+                    
+                    string user_name = Console.ReadLine();
+
+                    Entry user_entry = new Entry(prompt, user_input, user_name);
 
                     temporary_entries.addEntry(user_entry);
                 }
@@ -54,9 +58,7 @@ class Program
                 }
                 else if (num_user_response == 4)
                 {
-                    Console.Write("Name:");
-                    string journal_owner = Console.ReadLine();
-                    Console.WriteLine(journal_owner);
+                    // Console.Write("Name:");
                     Console.Write("Filename:");
                     string load_file = Console.ReadLine();
                     Journal returned_file = new Journal();
