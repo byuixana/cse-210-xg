@@ -29,7 +29,8 @@ class Program
         Console.WriteLine(fraction3.GetFractionString());
         
         // Convert fraction to decimals.
-        fraction3.GetDecimalValue(top_number, bottom_number);
+        
+        Console.WriteLine(fraction3.GetDecimalValue(top_number, bottom_number));
 
 
     }

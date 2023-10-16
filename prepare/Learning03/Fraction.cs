@@ -48,9 +48,9 @@ public class Fraction{
         string fraction_string = $"{_top} / {_bottom}";
         return fraction_string;
     }
-    public double GetDecimalValue(int top, int bottom)
+    public double GetDecimalValue(double top, double bottom)
     {
-        return top / bottom;
+        return double.Round(top / bottom, 2);
     }
     
 }
