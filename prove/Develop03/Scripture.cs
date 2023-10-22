@@ -2,16 +2,13 @@ using System.Diagnostics.Metrics;
 
 public class Scripture{
     private string _text;
+    private string _word;
     private List<Word> _wordList= new List<Word>();
     private List<int> _intList = new List<int>();
     
      public Scripture(string text)
     {
         _text = text;
-    }
-    public bool wordHidden()
-    {
-        return _intList.Count > 0;
     }
 
    
@@ -34,37 +31,37 @@ public class Scripture{
      public List<Word> createWordList()
     {
        string [] textArray = _text.Split();
-    //    int _count = 0;
         foreach (string word in textArray)
         {
             _wordList.Add(new Word(word));
-            // _intList.Add(_count);
         }
         return _wordList;
     }
-    public void HideWords()
-    {
 
-        Random rnd = new Random();
-        int randomWordIndex = rnd.Next(_wordList.Count());
-        foreach (Word word in _wordList)
+    public Word HideWord()
         {
-
-            
-            if (_wordList[randomWordIndex] == word)
+            // createWordList();
+            Random rnd = new Random();
+            int randomWordIndex = rnd.Next(_wordList.Count);
+            Word wordToHide = _wordList[randomWordIndex];
+            foreach (Word word in _wordList)
             {
-                Word hiddenWord = new Word("_");  
-                Console.Write(hiddenWord);
+                if (wordToHide == word)
+                {
+                    Word hiddenWord = new Word("_ _ _ _");
+                    wordToHide = hiddenWord;
+                } else{
+                    wordToHide = _wordList[randomWordIndex];
+                }
+            }
+            return wordToHide;
+        }
+    public void DisplayAltScripture(List <Word> wordList)
+        {
+            foreach(Word word in wordList)
+            {
+                word.Display();
             }
         }
-    }
-   
-    public void DisplayAltScripture()
-    {
-        foreach(Word word in _wordList)
-        { 
-            HideWords();
-            word.Display();
-        }
-    }
+
 }
