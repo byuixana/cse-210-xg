@@ -4,7 +4,6 @@ public class Scripture{
     private string _text;
     private List<Word> _wordList= new List<Word>();
     private List<int> _intList = new List<int>();
-    private string [] _textArray;
     
      public Scripture(string text)
     {
@@ -32,7 +31,7 @@ public class Scripture{
         // return scriptureFormat;
         Console.WriteLine(scriptureFormat);
     }
-     public void createWordList()
+     public List<Word> createWordList()
     {
        string [] textArray = _text.Split();
     //    int _count = 0;
@@ -41,20 +40,22 @@ public class Scripture{
             _wordList.Add(new Word(word));
             // _intList.Add(_count);
         }
+        return _wordList;
     }
     public void HideWords()
     {
-        
+
+        Random rnd = new Random();
+        int randomWordIndex = rnd.Next(_wordList.Count());
         foreach (Word word in _wordList)
         {
 
-            Random rnd = new Random();
-            int randomWordIndex = rnd.Next(_wordList.Count());
+            
             if (_wordList[randomWordIndex] == word)
             {
-                Word hiddenWord = new Word(_textArray[randomWordIndex]);
+                Word hiddenWord = new Word("_");  
+                Console.Write(hiddenWord);
             }
-
         }
     }
    
@@ -62,7 +63,8 @@ public class Scripture{
     {
         foreach(Word word in _wordList)
         { 
-             word.Display();
+            HideWords();
+            word.Display();
         }
     }
 }
