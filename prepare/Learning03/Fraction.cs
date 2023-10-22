@@ -48,6 +48,7 @@ public class Fraction{
         string fraction_string = $"{_top} / {_bottom}";
         return fraction_string;
     }
+    // The issue with conversion was there are two integers with the same avriable that's being returned.
     public double GetDecimalValue(double top, double bottom)
     {
         return double.Round(top / bottom, 2);
