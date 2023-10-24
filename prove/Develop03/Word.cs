@@ -1,6 +1,7 @@
 public class Word
 {
     private string _word;
+    private char [] _letterList;
     private string _hiddenWord;
     private int _letterCount;
     private bool _isHidden = false;
@@ -20,14 +21,13 @@ public class Word
     {
         if(_isHidden == true)
         {
-            
-            foreach (char letter in _word)
-                {
-                    Console.WriteLine("_");
-                }
-            // Console.WriteLine(_hiddenWord + " ");
-        }
+            _letterList = _word.ToCharArray();
 
+            foreach (char letter in _letterList)
+                {
+                    Console.Write(" _ ");
+                }
+        }
         else
         {
             Console.Write(_word + " ");
