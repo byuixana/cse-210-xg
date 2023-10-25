@@ -60,19 +60,6 @@ public class Scripture{
             }
             _wordList[randomWordIndex].HideWord();
         }
-            // foreach (Word word in _wordList)
-            // {
-            
-            //     if (wordToHide == word)
-            //     {
-            //         
-                    
-            //         // wordToHide = hiddenWord;
-            //     } else{
-            //         wordToHide = _wordList[randomWordIndex];
-            //     }
-            // }
-            // return wordToHide;
 
     public void DisplayAltScripture()
         {

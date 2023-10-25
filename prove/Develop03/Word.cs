@@ -13,25 +13,29 @@ public class Word
     public string GetWord(){
         return _word;
     }
-    public void SetScripture(string word)
+    public void SetWord(string word)
     {
         _word = word;
     }
     public void Display()
     {
-        if(_isHidden == true)
-        {
-            _letterList = _word.ToCharArray();
+         if(_word == "." || _word == ",")
+            {
+                _isHidden = false;
+                if(_isHidden == true)
+                    {
+                        _letterList = _word.ToCharArray();
 
-            foreach (char letter in _letterList)
+                        foreach (char letter in _letterList)
+                            {
+                                    Console.Write(" _ ");
+                            }
+                    }
+                else
                 {
-                    Console.Write(" _ ");
+                    Console.Write(_word + " ");
                 }
-        }
-        else
-        {
-            Console.Write(_word + " ");
-        }
+            }
     }
 
     public bool GetIsHidden()

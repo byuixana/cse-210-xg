@@ -1,10 +1,9 @@
-public class Book : Loanable
+public class LibraryBook : Loanable
 {
     private string _isbn;
     private int _upc;
-    public Book(string title, string isbn, int upc)
+    public LibraryBook(string isbn, int upc) : base(string title)
     {
-        _title = title;
         _isbn = isbn;
         _upc = upc;
     }

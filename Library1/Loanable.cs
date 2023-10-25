@@ -5,7 +5,7 @@ public class Loanable{
     public Loanable(string title)
     {
         _title = title;
-    }
+    }   
     public void Checkout()
     {
         _isCheckedIn = false;
@@ -18,6 +18,6 @@ public class Loanable{
     public virtual void Display()
     {
         Console.WriteLine($"Title: {_title}");
-        base.Display();
+        // base.Display();
     }
 }
