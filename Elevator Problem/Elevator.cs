@@ -1,4 +1,4 @@
-class Elevator{
+public class Elevator{
     protected bool _doorsOpen;
     protected int _floor;
     protected int _elevatorNumber;
@@ -9,10 +9,14 @@ class Elevator{
         _elevatorNumber = elevatorNumber;
     }
 
-    public void doorsOpen()
+    public void doorAction()
     {
-        _doorsOpen = true;
-        Console.WriteLine("Doors are open.");
+        if (_doorsOpen == true)
+        {
+            Console.WriteLine("Doors open.");
+        } else{
+            Console.WriteLine("DoorsClosed");
+        }
     }
 
     public void doorsClose()
@@ -24,11 +28,10 @@ class Elevator{
     public void moveFloor(int userFloor)
     {
         _floor = userFloor;
-        Console.Writeline($"Reached {userFloor}.")
+        Console.WriteLine($"Reached {userFloor}.");
     }
-    public void callElevator(int userElevatorNumber, int userFloor)
+    public void callElevator()
     {
-        _elevatorNumber = userElevatorNumber;
-        Console.WriteLine($"Calling {userElevatorNumber}.")
+        Console.WriteLine($"Calling Elevator {_elevatorNumber} to Floor {_floor}.");
     }
 }
