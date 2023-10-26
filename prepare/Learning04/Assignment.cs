@@ -7,9 +7,9 @@ public class Assignment{
         _topic = topic;
     }
 
-    public void GetSummary()
+    public string GetSummary()
     {
-        Console.WriteLine(_studentName);
-        Console.WriteLine(_topic);
+        string summary = $"{_studentName} - {_topic}";
+        return summary;
     }
 }
