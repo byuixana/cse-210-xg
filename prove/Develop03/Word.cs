@@ -1,9 +1,10 @@
 public class Word
 {
     private string _word;
-    private char [] _letterList;
+    private char[] _letterArray;
     private string _hiddenWord;
-    private int _letterCount;
+    private int _index = 0;
+
     private bool _isHidden = false;
     public Word(string word)
     {
@@ -19,24 +20,28 @@ public class Word
     }
     public void Display()
     {
-         if(_word == "." || _word == ",")
-            {
-                _isHidden = false;
                 if(_isHidden == true)
                     {
-                        _letterList = _word.ToCharArray();
-
-                        foreach (char letter in _letterList)
-                            {
-                                    Console.Write(" _ ");
-                            }
-                    }
-                else
-                {
-                    Console.Write(_word + " ");
-                }
-            }
+                        _letterArray = _word.ToCharArray();
+                        foreach (char letter in _letterArray)
+                        {
+                            for (int i = 0; i < _letterArray.Length; i++)
+                                {
+                                    // if (_letterArray[i] != '.' || _letterArray[i])
+                                   
+                                       
+                                    _letterArray[i] = '_';
+                                }
+                        } 
+                        string wordCombined = string.Join("", _letterArray.ToArray() );
+                        Console.Write(wordCombined + " ");        
+                    } else
+                        {
+                            Console.Write(_word + " ");
+                        }
+            
     }
+    
 
     public bool GetIsHidden()
     {

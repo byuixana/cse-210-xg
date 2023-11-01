@@ -5,6 +5,7 @@ public class Scripture{
     private Reference _reference;
 
     private bool _allWordsHidden = false;
+    private int _hiddenWordCount = 0;
     private string _text;
     private string _word;
     private List<Word> _wordList= new List<Word>();
@@ -27,9 +28,11 @@ public class Scripture{
         _text = text;
     }
 
-    public void scriptureFormat()
+    public string scriptureFormat()
     {
         string scriptureFormat =  $"{_text}";
+        return scriptureFormat;
+
     }
      public void createWordList()
     {
@@ -45,7 +48,18 @@ public class Scripture{
     {
         // look through all words and see if they are all hidden
         // if so, change it to true;
-        return false;
+        // return fals e
+        foreach (Word word in _wordList){
+            if(word.GetIsHidden() == true)
+            {
+                _hiddenWordCount++;
+            }
+            if (_hiddenWordCount >= _wordList.Count)
+            {
+                _allWordsHidden = true;
+            }
+        }
+        return _allWordsHidden;
     }
 
     public void HideWords()
@@ -69,5 +83,4 @@ public class Scripture{
                 word.Display();
             }
         }
-
 }

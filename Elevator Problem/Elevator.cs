@@ -1,10 +1,10 @@
 public class Elevator{
-    protected bool _doorsOpen;
+    protected bool _doorsOpen = true;
     protected int _floor;
     protected int _elevatorNumber;
-    public Elevator(bool doorsOpen, int floor, int elevatorNumber)
+    public Elevator(int floor, int elevatorNumber)
     {
-        _doorsOpen = doorsOpen;
+        
         _floor = floor;
         _elevatorNumber = elevatorNumber;
     }
@@ -15,7 +15,7 @@ public class Elevator{
         {
             Console.WriteLine("Doors open.");
         } else{
-            Console.WriteLine("DoorsClosed");
+            Console.WriteLine("Doors closed");
         }
     }
 
