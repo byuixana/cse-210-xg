@@ -1,47 +1,59 @@
 // Here is the base class
 
 public class Activity{
-    protected string _startMessage;
-    protected string _endMessage;
-    // protected List<string> _animationStrings;
-    protected int _timer;
+    // protected DateTime _startTime = DateTime.Now;
+    // protected string _startMessage;
+    // protected string _endMessage;
+    protected List<string> _animationStrings;
+    protected int _userTime;
     protected bool _userTimeUp = false;
     protected List<string> _promptList;
     protected string _activityName;
+    protected string _activityDescription;
 
-    public Activity(string activityName)
+    public Activity(string activityName, string activityDescription, int userTime)
     {
         _activityName = activityName;
+        _activityDescription = activityDescription;
+        _userTime = userTime;
     } 
 public void DisplayAnimation(){
-        List<string> _animationStrings = new List<string>();
-        _animationStrings.Add("|");
-        _animationStrings.Add("/");
-        _animationStrings.Add("-");
-        _animationStrings.Add("\\");
-        _animationStrings.Add("|");
-        _animationStrings.Add("/");
-        _animationStrings.Add("-");
-        _animationStrings.Add("\\");
-        _animationStrings.Add("|");
-
-        foreach (string s in _animationStrings){
+        List<string> animationStrings = new List<string>();
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+        animationStrings.Add("|");
+        
+        foreach (string s in animationStrings){
             Console.Write(s);
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
-        Console.WriteLine("Done. Good work.")
     }
 
-    public void DisplayMessages(int timer, int userTime)
+    public void DisplayStartMessage()
     {
-        // True-false value declaring whether or not the time is up. How do I ensure the Start message displays first?
-        // Should I make two separate functions?
-        // if (not _userTimeUp) 
-        // {
-        //     Console.WriteLine($"Welcome to your {activity_name} session.");
-        // }
+            Console.WriteLine($"Welcome to the {_activityName} activity.");
+            Console.WriteLine(_activityDescription);
+            Console.WriteLine("Get ready...");
+    }
+    public void DisplayEndMessage()
+    {
+        Console.WriteLine($"You have completed this {_activityName}.");
+        Console.WriteLine("Good job!");
+    }
 
+    public void Countdown(){
+        for(int i = 1; i<=5; i++)
+            {
+                Thread.Sleep(1000);
+                Console.WriteLine(i);
+            }
     }
 
 }

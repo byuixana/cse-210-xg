@@ -4,8 +4,8 @@ public class Scripture{
 
     private Reference _reference;
 
-    private bool _allWordsHidden = false;
-    private int _hiddenWordCount = 0;
+    private bool _allWordsHidden = true;
+    private double _hiddenWordCount = 0;
     private string _text;
     private string _word;
     private List<Word> _wordList= new List<Word>();
@@ -50,16 +50,13 @@ public class Scripture{
         // if so, change it to true;
         // return fals e
         foreach (Word word in _wordList){
-            if(word.GetIsHidden() == true)
+            if(!word.GetIsHidden())
             {
-                _hiddenWordCount++;
-            }
-            if (_hiddenWordCount >= _wordList.Count)
-            {
-                _allWordsHidden = true;
+                _allWordsHidden = false;
+                return _allWordsHidden;
             }
         }
-        return _allWordsHidden;
+        return _allWordsHidden = true;
     }
 
     public void HideWords()

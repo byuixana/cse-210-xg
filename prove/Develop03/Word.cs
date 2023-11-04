@@ -33,8 +33,8 @@ public class Word
                                     _letterArray[i] = '_';
                                 }
                         } 
-                        string wordCombined = string.Join("", _letterArray.ToArray() );
-                        Console.Write(wordCombined + " ");        
+                        string _hiddenWord = string.Join("", _letterArray.ToArray() );
+                        Console.Write(_hiddenWord + " ");        
                     } else
                         {
                             Console.Write(_word + " ");
