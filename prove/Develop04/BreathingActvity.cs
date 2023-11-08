@@ -29,6 +29,5 @@ public class BreathingActivity : Activity{
                 startTime = DateTime.Now;
             }
         }
-
     }
 }

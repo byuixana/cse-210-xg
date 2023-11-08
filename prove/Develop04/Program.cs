@@ -23,6 +23,7 @@ class Program
             Console.Write("Activity time(seconds):");
             string userTimeString = Console.ReadLine();
             int userTime = int.Parse(userTimeString);
+            Console.Clear();
             if (userTime < 10)
             {
                 Console.WriteLine("You may want more time than that. Enter a different number of seconds.");
