@@ -13,6 +13,7 @@ class Program
         FileHandler fileHandler = new FileHandler();
         // Creates temporary goal list for session.
         GoalList goalList = new GoalList();
+        List<Goal> realList = goalList.GetList();
 
         // While loop for menu
         while (!end)
@@ -64,20 +65,23 @@ class Program
                 // This will take all the user's previous goals and write them from the document back into the goalList object.
                 Console.Write("Filename:");
                 string fileName = Console.ReadLine();
-                List<Goal> grabbedList = goalList.GetList();
-                grabbedList = fileHandler.LoadFile(fileName, goalList);
-                Console.WriteLine(grabbedList);
+               
+                fileHandler.CreateFile(fileName, goalList);
             }
             else if(userInput == "4")
             {
                 // This will take all the user's previous goals and write them from the document back into the goalList object.
                 Console.Write("Filename:");
                 string fileName = Console.ReadLine();
-                fileHandler.LoadFile(fileName, goalList);
+                realList = fileHandler.LoadFile(fileName, goalList);
+                foreach (Goal goal in realList)
+                {
+                    Console.WriteLine(goal.GetName());
+                }
             }
             else if(userInput == "5")
             { 
-                int goalNumber = new int();
+                int goalNumber = 1;
                 foreach (Goal goal in goalList.GetList())
                 {
                     Console.WriteLine($"{goalNumber}) {goal.GetName()}");

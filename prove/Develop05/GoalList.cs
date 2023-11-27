@@ -10,6 +10,10 @@ public class GoalList{
     {
         return _totalPoints;
     }
+    public void SetTotalPoints(int totalPoints)
+    {
+        _totalPoints = totalPoints;
+    }
 
     public void SetList(List<Goal> goalList){
         _goalList = goalList;
@@ -24,6 +28,24 @@ public class GoalList{
     {
         Console.WriteLine(_totalPoints);
     }
+
+    // public void AddTotalPoints()
+    // {
+    //     foreach(Goal goal in _goalList)
+    //     {
+    //         string type = goal.GetGoalType();
+    //         if (goal.GetGoalStatus() == true)
+    //         {
+    //             _totalPoints += goal.GetPoints();
+    //         }
+    //         else if (type == "C")
+    //         {
+    //             int timesDone = eternalGoal.GetTimesDone();
+    //             _totalPoints += (goal.GetPoints() * timesDone); 
+    //         }
+    //     }
+    // }
+
 
     public void DisplayGoals()
     {

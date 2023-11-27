@@ -22,6 +22,7 @@ public class EternalGoal : Goal{
         {
             int totalPoints = goalList.GetTotalPoints();
             totalPoints += _points;
+            goalList.SetTotalPoints(totalPoints);
         }
 
     }

@@ -1,3 +1,4 @@
+True,Attend the temple this week,Attend the temple,3, S
 False,Attend the temple this week,Attend the temple,3, S
 False,Study for ten minutes each day,Study scriptures,10, E
-False,Study for ten minutes each day,Journal for ten minutes after scripture study,10, C
+False,Study for ten minutes each day,Journal for ten minutes after scripture study,10,C,0

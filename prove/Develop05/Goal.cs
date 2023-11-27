@@ -1,7 +1,7 @@
 public class Goal{
     protected string _goalDescription;
     protected string _goalName;
-    protected int _points = 0;
+    protected int _points;
     protected bool _isDone;
     protected string _type;
     public Goal(string goalDescription, string goalName, int points, bool isDone, string type="S")
@@ -32,22 +32,17 @@ public class Goal{
             _isDone = true;
         }
 
-        public string FormatSave(){
-        
-            string goalFormat = $"{_isDone},{_goalName},{_goalDescription},{_points}, {_type}";
-            return goalFormat;
+        public virtual string FormatSave(){
+
+                string goalFormat = $"{_isDone},{_goalName},{_goalDescription},{_points}, {_type}";
+                return goalFormat;
         }
 
         public virtual void AddPoints(GoalList goalList)
         {
             int totalPoints = goalList.GetTotalPoints();
-            if (_isDone == false)
-            {
-                if (_isDone == true)
-                    {
-                        totalPoints += _points;
-                    } 
-            } 
+            totalPoints += _points;
+            goalList.SetTotalPoints(totalPoints);
         }
 
          public int GetPoints()

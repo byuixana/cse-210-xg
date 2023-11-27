@@ -11,14 +11,13 @@ public class FileHandler{
                 {
                     outputFile.WriteLine(goal.FormatSave());
                 }
-                
-                    
             }
         }
 
     public List<Goal> LoadFile(string _filename, GoalList goalList)
         {
-            List<Goal> returnedGoals = new List<Goal>();
+            Console.WriteLine(_filename);
+            List<Goal> newGoalList = goalList.GetList();
             
             string[] lines = System.IO.File.ReadAllLines(_filename);
 
@@ -29,31 +28,31 @@ public class FileHandler{
                     string goalName = line_array[1];
                     string goalDescription = line_array[2];
                     int points = int.Parse(line_array[3]);
-                    string type= line_array[4];
+                    string type = line_array[4];
                     if (type == "S")
                     {
                         Goal goal = new Goal(goalDescription, goalName, points, isDone, type);
-                        returnedGoals.Add(goal);
+                        newGoalList.Add(goal);
+                        Console.WriteLine("Added");
                     }
                     else if (type == "E")
                     {
                         EternalGoal eternalGoal = new EternalGoal(goalDescription, goalName, points, isDone, type);
-                        returnedGoals.Add(eternalGoal);
+                        newGoalList.Add(eternalGoal);
+                        Console.WriteLine("Added");
                     }
                     else if (type == "C")
                     {
                         ChecklistGoal checklistGoal = new ChecklistGoal(goalDescription, goalName, points, isDone, 0, type);
-                        returnedGoals.Add(checklistGoal);
+                        int timesDone = checklistGoal.GetTimesDone();
+                        checklistGoal.timesDone = timesDone;
+                        newGoalList.Add(checklistGoal);
+                        
+                        
+                        Console.WriteLine("Added");
                     }
                     
                 }
-                return returnedGoals;
-            // Sets goalList to rewritten list. 
-            // goalList.SetList(returnedGoals);
-            // foreach(Goal goal in returnedGoals)
-            // {
-            //         (goal.formatGoals());
-            // }
-
+            return newGoalList;
         }
 }

@@ -48,10 +48,16 @@ public class ChecklistGoal : Goal{
             }
             
         }
+    public override string FormatSave()
+    {
+        string goalFormat = $"{_isDone},{_goalName},{_goalDescription},{_points},{_type},{_timesDone}";
+        return goalFormat;
+    }
     public override void AddPoints(GoalList goalList)
         {
             int totalPoints = goalList.GetTotalPoints();
             totalPoints += _points;
+            goalList.SetTotalPoints(totalPoints);
         }
 
     public override void UpdateStatus()
