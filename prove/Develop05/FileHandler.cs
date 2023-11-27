@@ -43,9 +43,11 @@ public class FileHandler{
                     }
                     else if (type == "C")
                     {
-                        ChecklistGoal checklistGoal = new ChecklistGoal(goalDescription, goalName, points, isDone, 0, type);
-                        int timesDone = checklistGoal.GetTimesDone();
-                        checklistGoal.timesDone = timesDone;
+                        string timesDone = line_array[5];
+                        int integerTimesDone = int.Parse(timesDone);
+                        string timesToDo = line_array[6];
+                        int integerTimesToDo = int.Parse(timesToDo);
+                        ChecklistGoal checklistGoal = new ChecklistGoal(goalDescription, goalName, points, isDone, integerTimesDone, integerTimesToDo, type);
                         newGoalList.Add(checklistGoal);
                         
                         

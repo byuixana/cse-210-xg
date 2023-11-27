@@ -51,7 +51,7 @@ class Program
                 }
                 else if (goalType == "3")
                 {
-                    ChecklistGoal checklistGoal = new ChecklistGoal("Journal for ten minutes after scripture study", "Study for ten minutes each day", 10, false, 5);
+                    ChecklistGoal checklistGoal = new ChecklistGoal("Journal for ten minutes after scripture study", "Study for ten minutes each day", 10, false, 10,  5);
                     goalList.AddtoList(checklistGoal);
                 }
 

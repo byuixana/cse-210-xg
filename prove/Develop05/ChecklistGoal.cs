@@ -1,7 +1,7 @@
 public class ChecklistGoal : Goal{
     private int _timesDone = 0;
     private int _userGoalTime;
-    public ChecklistGoal(string goalDescription, string goalName, int points, bool isDone, int userGoalTime, string type="C") : base(goalDescription, goalName, points, isDone, type)
+    public ChecklistGoal(string goalDescription, string goalName, int points, bool isDone, int timesDone, int userGoalTime,string type="C") : base(goalDescription, goalName, points, isDone, type)
     {
         _goalDescription = goalDescription;
         _goalName = goalName;
@@ -11,11 +11,6 @@ public class ChecklistGoal : Goal{
         _type = type;
     }
 
-    public int AddVisits()
-    {
-        _timesDone++;
-        return _timesDone;
-    }
 
     public override bool GetGoalStatus()
     {
@@ -50,7 +45,7 @@ public class ChecklistGoal : Goal{
         }
     public override string FormatSave()
     {
-        string goalFormat = $"{_isDone},{_goalName},{_goalDescription},{_points},{_type},{_timesDone}";
+        string goalFormat = $"{_isDone},{_goalName},{_goalDescription},{_points},{_type},{_timesDone}, {_userGoalTime}";
         return goalFormat;
     }
     public override void AddPoints(GoalList goalList)
@@ -65,7 +60,9 @@ public class ChecklistGoal : Goal{
             if (_timesDone == _userGoalTime)
             {
                 _isDone = true;
-            }  
+            }else{
+                _timesDone++;
+            }
         }
         
     }
