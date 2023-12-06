@@ -2,9 +2,10 @@ public class Lecture : Event
 {
     private string _speaker;
     private int _capacity;
-    public Lecture(string speaker, string title, string description, string date, string address, string eventType="Lecture") : base(title, description, date, address, eventType)
+    public Lecture(string speaker, string title, string description, string date, Address address, int capacity, string eventType="Lecture") : base(title, description, date, address, eventType)
     {
         _speaker = speaker;
+        _capacity = capacity;
         // _title = title;
         // _description = description;
         // _date = date;
@@ -13,21 +14,21 @@ public class Lecture : Event
     }
 
 
-    public virtual string GenerateStandardMessage()
+    public override void GenerateStandardMessage()
     {
-        string standardMessage = $"{_title}, {_description}, {_date}, {_address}";
-        return standardMessage;
+        string standardMessage = $"{_title}, {_description}, {_date}, {_address.FormatAddress()}";
+        Console.WriteLine(standardMessage);
     }
 
-    public virtual string GenerateFullMessage()
+    public override void GenerateFullMessage()
     {
         string fullMessage = $"{_eventType} {_title}: {_speaker}, {_description}, {_date}, {_capacity}";
-        return fullMessage;
+        Console.WriteLine(fullMessage);
     }
 
-    public virtual string GenerateShortMessage()
+    public override void GenerateShortMessage()
     {
         string shortMessage = $"{_title}: {_eventType}, {_date}";
-        return shortMessage;
+        Console.WriteLine(shortMessage);
     }
 }

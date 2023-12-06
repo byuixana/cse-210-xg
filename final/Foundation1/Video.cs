@@ -3,7 +3,7 @@ public class Video{
     private string _author;
     private int _videoLength;
     private List<Comment> _comments;
-    private int _commentNumber = 0;
+    private int _commentNumber;
     public Video(string title, string author, int videoLength, List<Comment> comments)
     {
         _title = title;
@@ -32,12 +32,17 @@ public class Video{
         Console.WriteLine($"Title: {_title}, Created By: {_author}, Length: {_videoLength} seconds, Number of Comments: {_commentNumber}");
     }
 
-    public int CalculateNumOfComments()
-    { 
-        foreach (Comment comment in _comments)
-        {   
-            _commentNumber++;
-        }
-        return _commentNumber;
+    public void UpdateCommentNumber()
+    {
+        _commentNumber++;
     }
+
+    // public int CalculateNumOfComments()
+    // { 
+    //     foreach (Comment comment in _comments)
+    //     {   
+    //         _commentNumber++;
+    //     }
+    //     return _commentNumber;
+    // }
 }

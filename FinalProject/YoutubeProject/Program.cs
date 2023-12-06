@@ -13,6 +13,7 @@ class Program
         Comment comment1 = new Comment("MerChristmas190", "Good stuff!");
         octopusComments = octopusVid.GetComments();
         octopusComments.Add(comment1);
+        octopusVid.UpdateCommentNumber();
 
         List<Comment> acidComments = new List<Comment>();
         Video acidVLavaVid = new Video("Acid vs. Lava", "Mark Rober", 1200, acidComments);
@@ -20,6 +21,7 @@ class Program
         Comment comment2 = new Comment("America1998", "Octopi are cool!");
         acidComments = acidVLavaVid.GetComments();
         acidComments.Add(comment2);
+        acidVLavaVid.UpdateCommentNumber();
 
         List<Comment> policeComments = new List<Comment>();
         Video escapeVid = new Video("How to Escape a Police Sniffing Dog", "Mark Rober", 1620, policeComments);
@@ -27,6 +29,7 @@ class Program
         Comment comment3 = new Comment("SamIAm", "Green eggs and ham.");
         policeComments = escapeVid.GetComments();
         policeComments.Add(comment3);
+        escapeVid.UpdateCommentNumber();
 
         Console.WriteLine("Video List:");
         foreach (Video video in videoList)

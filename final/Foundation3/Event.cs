@@ -3,10 +3,10 @@ public class Event
     protected string _title;
     protected string _description;
     protected string _date;
-    protected string _address;
+    protected Address _address;
     protected string _eventType = "";
 
-    public Event(string title, string description, string date, string address, string eventType) 
+    public Event(string title, string description, string date, Address address, string eventType) 
     {
         _title = title;
         _description = description;
@@ -16,21 +16,21 @@ public class Event
     }
 
 
-    public virtual string GenerateStandardMessage()
+    public virtual void GenerateStandardMessage()
     {
         string standardMessage = $"{_title}, {_description}, {_date}, {_address}";
-        return standardMessage;
+        Console.WriteLine(standardMessage);
     }
 
-    public virtual string GenerateFullMessage()
+    public virtual void GenerateFullMessage()
     {
         string fullMessage = "";
-        return fullMessage;
+        Console.WriteLine(fullMessage);
     }
 
-    public virtual string GenerateShortMessage()
+    public virtual void GenerateShortMessage()
     {
         string shortMessage = "";
-        return shortMessage;
+        Console.WriteLine(shortMessage);
     }
 }
