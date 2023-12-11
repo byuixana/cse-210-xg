@@ -59,6 +59,11 @@ class Program
             else if(userInput == "2")
             {
                 goalList.DisplayGoals();
+                foreach (Goal goal in goalList.GetList())
+                {
+                    goal.AddPoints(goalList);
+                }
+                goalList.DisplayTotalPoints();
             }
             else if(userInput == "3")
             {

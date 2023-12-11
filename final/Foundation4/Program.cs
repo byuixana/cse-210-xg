@@ -19,7 +19,7 @@ class Program
 
         swimming.GetSummary();
 
-        Running running = new Running("Running", "6/12", 30, 90);
+        Running running = new Running("Running", "6/12", 30.0, 3.0);
         double runningDistance = running.CalculateDistance();
         running.SetDistance(runningDistance);
 
@@ -31,7 +31,7 @@ class Program
 
         running.GetSummary();
 
-        Biking biking = new Biking("Biking", "6/14", 30, 30);
+        Biking biking = new Biking("Biking", "6/14", 30.0, 6.75);
         double bikingDistance = biking.CalculateDistance();
         biking.SetDistance(bikingDistance);
 

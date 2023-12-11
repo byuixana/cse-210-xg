@@ -26,6 +26,7 @@ public class GoalList{
 
     public void DisplayTotalPoints()
     {
+        
         Console.WriteLine(_totalPoints);
     }
 

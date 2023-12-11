@@ -1,23 +1,24 @@
 public class Biking : Activity
 {
-    private double _laps;
+    private double _miles;
     private double _distance;
     private double _speed;
     private double _pace;
-    public Biking(string actvityName, string date, int minutes, double laps) : base(actvityName, date, minutes)
+    public Biking(string actvityName, string date, double minutes, double miles) : base(actvityName, date, minutes)
     {
-        _laps = laps;
+        _miles = miles;
+        _minutes = minutes;
     }
 
     public override double CalculateDistance()
     {
-        _distance = _laps * 50 / 1000 * 0.62;
+        _distance = _miles;
         return _distance; 
     }
 
     public override double CalculateSpeed()
     {
-        _speed = (_distance / _minutes) * 60.00;
+        _speed = (_distance / _minutes)* 60.00;
         return _speed;
     }
 

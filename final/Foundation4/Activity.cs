@@ -2,12 +2,12 @@ public class Activity
 {
     protected string _date;
     protected string _actvityName;
-    protected int _minutes;
+    protected double _minutes;
     protected double _distance;
     protected double _speed;
     protected double _pace;
 
-    public Activity(string actvityName, string date, int minutes)
+    public Activity(string actvityName, string date, double minutes)
     {
         _actvityName = actvityName;
         _date = date;
