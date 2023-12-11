@@ -18,9 +18,13 @@ class Program
         List<Comment> acidComments = new List<Comment>();
         Video acidVLavaVid = new Video("Acid vs. Lava", "Mark Rober", 1200, acidComments);
         videoList.Add(acidVLavaVid);
-        Comment comment2 = new Comment("America1998", "Octopi are cool!");
+        Comment acidComment = new Comment("America1998", "Acid is so cool!");
         acidComments = acidVLavaVid.GetComments();
-        acidComments.Add(comment2);
+        acidComments.Add(acidComment);
+        acidVLavaVid.UpdateCommentNumber();
+        Comment acidComment2 = new Comment("MarkRoberFan1", "Acid? Yike!");
+        acidComments = acidVLavaVid.GetComments();
+        acidComments.Add(acidComment2);
         acidVLavaVid.UpdateCommentNumber();
 
         List<Comment> policeComments = new List<Comment>();
@@ -29,6 +33,9 @@ class Program
         Comment comment3 = new Comment("SamIAm", "Green eggs and ham.");
         policeComments = escapeVid.GetComments();
         policeComments.Add(comment3);
+        escapeVid.UpdateCommentNumber();
+        Comment dogComment = new Comment("DogLover", "Those poor dogs!");
+        policeComments.Add(dogComment);
         escapeVid.UpdateCommentNumber();
 
         Console.WriteLine("Video List:");
